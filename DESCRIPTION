@@ -2,18 +2,9 @@ Package: chemcalculatorrr
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "Allyson",
-           family = "Stoll",
-           role = c("aut"),
-           email = "allyson.m.stoll@gmail.com"),
-    person(given = "Kingslin",
-           family = "Lv",
-           role = c("aut"),
-           email = "qinglin0810@gmail.com"),
-    person(given = "Joyce",
-           family = "Wang",
-           role = c("aut"),
-           email = "joyce.tzu.chia.wang@gmail.com"))
+    person("Allyson", "Stoll", , "allyson.m.stoll@gmail.com", role = c("aut", "cre"))
+    person("Kingslin", "Lv", , "qinglin0810@gmail.com", role = c("aut", "cre"))
+    person("Joyce", "Wang", , "joyce.tzu.chia.wang@gmail.com", role = c("aut", "cre"))
 Description: chemcalculatorrr is an open-source library designed for purpose of calculating chemical formular mass in g/mol in the chemistry field.
 License: MIT + file LICENSE
 Encoding: UTF-8
