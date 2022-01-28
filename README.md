@@ -43,8 +43,6 @@ To our knowledge, while `chemcalculatorrr` library generates wordcloud visualiza
 
 ## Usage
 
-- TODO
-
 ``` r
 ## load the library
 library(chemcalculatorrr)
