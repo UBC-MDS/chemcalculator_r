@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/UBC-MDS/chemcalculatorrr/workflows/R-CMD-check/badge.svg)](https://github.com/UBC-MDS/chemcalculatorrr/actions)
 [![codecov](https://codecov.io/gh/UBC-MDS/chemcalculatorrr/branch/main/graph/badge.svg?token=nVHX32wNQP)](https://codecov.io/gh/UBC-MDS/chemcalculatorrr)
 
 <!-- badges: end -->
