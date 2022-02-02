@@ -4,7 +4,9 @@
 # chemcalculatorrr
 
 <!-- badges: start -->
+
 [![codecov](https://codecov.io/gh/UBC-MDS/chemcalculatorrr/branch/main/graph/badge.svg?token=nVHX32wNQP)](https://codecov.io/gh/UBC-MDS/chemcalculatorrr)
+
 <!-- badges: end -->
 
 The goal of chemcalculatorrr is R package useful for chemistry for the
@@ -38,11 +40,10 @@ required and optional arguments.
 You can install the released version of chemcalculatorrr from with:
 
 ``` r
-install.packages("chemcalculatorrr")
+devtools::install_github("UBC-MDS/chemcalculatorrr")
 ```
 
 ## Relevance to the R Ecosystem
-
 
 To our knowledge, there is no general-purpose library for calculating
 chemical formula mass in g/mol in the R ecosystem. We believe that
@@ -68,7 +69,6 @@ moles_grams_converter("H2O", 0.05555, "moles")
 ``` r
 library(chemcalculatorrr)
 percent_mass("H2O", "O")
-
 ```
 
 ## Documentation
