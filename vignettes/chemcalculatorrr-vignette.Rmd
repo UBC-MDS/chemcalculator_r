@@ -1,0 +1,79 @@
+---
+title: "chemcalculatorrr-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{chemcalculatorrr-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Introduction to chemcalculatorrr
+
+chemcalculatorrr is a useful R package for basic general chemistry calculations. This R package will be helpful to easily calculate the chemical formula mass, convert moles to grams and vice versa, and lastly calculate the percentage mass for the atomic formula specified of the main chemical compound.
+
+To our knowledge, there is no general-purpose library for calculating
+chemical formula mass in g/mol in the R ecosystem. We believe that
+`chemcalculatorrr` will provide some useful functionality to know how to
+calculate moles, and provide a grams to moles calculator, or even a
+moles to grams calculator. With our moles to grams converter, you can
+seamlessly convert between mass, molecular weight and moles.
+
+This document introduces you to chemcalculatorrr’s basic functions, and shows you how to use them.
+
+## Installation
+
+You can install the most recently released version of chemcalculatorrr from Github with:
+
+```{r setup, message=FALSE}
+devtools::install_github("UBC-MDS/chemcalculatorrr")
+```
+
+## Loading the Package
+
+Prior to use, load chemcalculatorrr into your project using the following command:
+
+```{r}
+library(chemcalculatorrr)
+```
+
+## Usage
+
+This package contains three functions. Each function has it’s own
+required and optional arguments.
+
+1.  `compute_mass`: Calculate the mass of the atoms or chemical formula
+    for the input chemical formula.
+2.  `moles_grams_converter`: Convert moles to grams and convert grams to
+    moles.
+3.  `percent_mass`: Calculate percentage mass for the desired atom or
+    molecule.
+    
+### Chemical Formula Entry
+
+For all of the functions, chemicals must be input to the function with the following characteristics:
+
+1.  The chemical must be in molecular formula. If you are unfamiliar, there is more information [here](https://en.wikipedia.org/wiki/Chemical_formula#Molecular_formula) on the molecular formula.
+
+### Computing Chemical Mass with `compute_mass()`
+
+``` {r}
+compute_mass("H2O")
+```
+
+### Converting Between Moles and Grams with `moles_grams_converter()`
+
+``` {r}
+moles_grams_converter("H2O", 0.05555, "moles")
+```
+
+### Calculating the Mass Percentage of the Compound of Interest with `percent_mass()` 
+
+``` {r}
+percent_mass("H2O", "O")
+```
