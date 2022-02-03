@@ -30,7 +30,7 @@ This document introduces you to chemcalculatorrr’s basic functions, and shows 
 
 You can install the most recently released version of chemcalculatorrr from Github with:
 
-```{r setup, message=FALSE}
+```r
 devtools::install_github("UBC-MDS/chemcalculatorrr")
 ```
 
@@ -38,7 +38,7 @@ devtools::install_github("UBC-MDS/chemcalculatorrr")
 
 Prior to use, load chemcalculatorrr into your project using the following command:
 
-```{r}
+```{r setup}
 library(chemcalculatorrr)
 ```
 
