@@ -38,7 +38,7 @@ devtools::install_github("UBC-MDS/chemcalculatorrr")
 
 Prior to use, load chemcalculatorrr into your project using the following command:
 
-```{r setup}
+```{r setup, message=FALSE}
 library(chemcalculatorrr)
 ```
 
