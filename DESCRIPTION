@@ -30,7 +30,6 @@ Imports:
     stringr,
     rje
 Depends: 
-    R (>= 3.3)
     knitr,
     rmarkdown
 VignetteBuilder: knitr
