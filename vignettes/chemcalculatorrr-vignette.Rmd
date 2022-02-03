@@ -1,0 +1,109 @@
+---
+title: "`chemcalculatorrr` Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{chemcalculatorrr-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Introduction to chemcalculatorrr
+
+chemcalculatorrr is a useful R package for basic general chemistry calculations. This R package will be helpful to easily calculate the chemical formula mass, convert moles to grams and vice versa, and lastly calculate the percentage mass for the atomic formula specified of the main chemical compound.
+
+To our knowledge, there is no general-purpose library for calculating
+chemical formula mass in g/mol in the R ecosystem. We believe that
+`chemcalculatorrr` will provide some useful functionality to know how to
+calculate moles, and provide a grams to moles calculator, or even a
+moles to grams calculator. With our moles to grams converter, you can
+seamlessly convert between mass, molecular weight and moles.
+
+This document introduces you to chemcalculatorrr’s basic functions, and shows you how to use them.
+
+## Installation
+
+You can install the most recently released version of chemcalculatorrr from Github with:
+
+```r
+devtools::install_github("UBC-MDS/chemcalculatorrr")
+```
+
+## Loading the Package
+
+Prior to use, load chemcalculatorrr into your project using the following command:
+
+```{r setup}
+library(chemcalculatorrr)
+```
+
+## Usage
+
+This package contains three functions. Each function has it’s own
+required and optional arguments.
+
+1.  `compute_mass`: Calculate the mass of the atoms or chemical formula
+    for the input chemical formula.
+2.  `moles_grams_converter`: Convert moles to grams and convert grams to
+    moles.
+3.  `percent_mass`: Calculate percentage mass for the desired atom or
+    molecule.
+    
+### <a id="formula_entry"></a>Chemical Formula Entry
+
+For all of the functions, chemicals must be input to the function with the following characteristics:
+
+1.  The chemical must be in molecular formula. If you are unfamiliar, there is more information [here](https://en.wikipedia.org/wiki/Chemical_formula#Molecular_formula) on the molecular formula.
+
+2. Hydrates (anhydrous solid⋅xH2O) are currently not handled. (This may be added in a future release.)
+
+3. The chemical must be entered as a string.
+
+4. Only the following characters are allowed: A-Z, a-z, 0-9, and () (left and right parentheses).
+```{r, error=TRUE}
+compute_mass('CuSO4-5H2O')
+```
+
+5. The string or subcomponents (parts in parentheses) cannot start with a lowercase letter.
+```{r, error=TRUE}
+compute_mass('(nH4)HS')
+```
+
+### Computing Chemical Mass with `compute_mass()`
+To compute the chemical mass, only one parameter needs to be passed to `compute_mass`:
+
+1. `chemical`: the molecular formula of the chemical given as a string.
+
+`chemical` must meet the entry criteria outlined in [Chemical Formula Entry](#formula_entry).
+``` {r}
+compute_mass("H2O")
+```
+
+### Converting Between Moles and Grams with `moles_grams_converter()`
+To convert between moles and grams, there are three parameters that need to be passed to `moles_grams_converter()`:
+
+1. `formula`: the chemical formula for the conversion;
+2. `mass`: the mass that needs to be converted (in grams or moles);
+3. `convert_from`: the type of the mass entered for `mass` (either "moles" or "grams").
+
+`formula` must meet the entry criteria outlined in [Chemical Formula Entry](#formula_entry).
+``` {r}
+moles_grams_converter("H2O", 0.0555, "moles")
+```
+
+### Calculating the Mass Percentage of the Compound of Interest with `percent_mass()` 
+To calculate the mass percentage of a compound of interest, there are two parameters that need to be passed to `percent_mass()`:
+
+1. `compound`: the chemical formula of the full compound;
+2. `element`: the chemical formula of the element or compound of interest.
+
+`compound` and `element` must meet the entry criteria outlined in [Chemical Formula Entry](#formula_entry).
+
+``` {r}
+percent_mass("H2O", "O")
+```
