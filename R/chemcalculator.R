@@ -135,7 +135,8 @@ percent_mass <- function(compound, element) {
 #'
 #' @return Dataframe of the chemicals elemental components and their counts.
 #' @import dplyr stringr
-#' @export
+#' @keywords internal
+#' @NoRd
 #'
 .chemical_elements <- function(chemical) {
 
@@ -233,7 +234,8 @@ percent_mass <- function(compound, element) {
 #' @param chemical chemical formula to check
 #'
 #' @return True or FALSE for if chemical formula has the correct format
-#' @export
+#' @keywords internal
+#' @NoRd
 #'
 #' @examples
 #' .check_chemical_format("H2O")          ## True
