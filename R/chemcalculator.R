@@ -8,11 +8,11 @@ path = here("inst/extdata", "Periodic-Table-of-Elements.csv")
 periodic_table <- read_csv(path, skip = 2) |>
   select(Symbol, AtomicMass)
 
-#' Computes the molar mass of the given chemical compound.
+#' Computes the molar mass of the given chemical compound
 #'
-#' @param chemical The molecular formula given as a string.
+#' @param chemical The molecular formula given as a string
 #'
-#' @return The molar mass of the given formula in g/mol.
+#' @return The molar mass of the given formula in g/mol
 #' @importFrom rje is.subset
 #' @export
 #'
@@ -51,7 +51,7 @@ compute_mass <- function(chemical) {
 
 #' Converts moles to grams or grams to moles
 #'
-#' @param formula A checmical formula for the conversion
+#' @param formula A chemical formula for the conversion
 #' @param mass The mass of molecule that needs to be converted (grams or moles)
 #' @param convert_from The type of conversion to be made from either "moles" or "grams"
 #'
